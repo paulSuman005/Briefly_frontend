@@ -221,7 +221,8 @@ const authSlice = createSlice({
                 state.authChecked = true;
             })
             .addCase(logoutUser.fulfilled, (state) => {
-                state.user = {};
+                state.user = null;
+                localStorage.removeItem("userData");
                 state.isLoggedIn = false;
                 state.loading = false;
                 state.error = null;
