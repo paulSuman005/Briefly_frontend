@@ -122,7 +122,7 @@ function HistoryItem({ item, isActive, onSelect }) {
                     <button
                         title={item.title}
                         onClick={() => onSelect(item._id)}
-                        className={`w-full ${isMeddium ? "text-sm" : "text-base"} text-left p-2 group-hover:pr-8 rounded-lg hover:bg-white/10 group-hover:bg-white/10 transition-colors truncate ${(isActive && !isLandingPage) ? "bg-white/30" : ""
+                        className={`w-full ${isMeddium ? "text-sm pr-8" : "text-base"} text-left p-2 group-hover:pr-8 rounded-lg hover:bg-white/10 group-hover:bg-white/10 transition-colors truncate ${(isActive && !isLandingPage) ? "bg-white/30" : ""
                             }`}
                     >
                         {item.title}
@@ -140,16 +140,16 @@ function HistoryItem({ item, isActive, onSelect }) {
                     />
                 )}
 
-                {/* Three-dot menu */}
                 <button
                     type="button"
                     onClick={(e) => {
                         e.stopPropagation();
                         setMenuOpen(!menuOpen);
                     }}
-                    className="absolute right-1 top-1/2 -translate-y-1/2 py-2 px-2 rounded-full 
-                               opacity-0 group-hover:opacity-100 hover:bg-white/20 transition-opacity
-                               text-gray-400 hover:text-white text-lg leading-none font-bold"
+                    className={`absolute right-1 top-1/2 -translate-y-1/2 py-2 px-2 rounded-full 
+                            hover:bg-white/20 transition-opacity text-gray-400 hover:text-white 
+                            text-lg leading-none font-bold ${isMeddium ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                        }`}
                 >
                     ⋮
                 </button>
